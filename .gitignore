@@ -1,0 +1,8 @@
+node_modules
+dist
+.vercel
+art/voice-cache
+art/logs
+.DS_Store
+.env*
+qa/

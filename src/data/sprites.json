@@ -1,0 +1,515 @@
+{
+ "store-bg-noceiling": {
+  "w": 1448,
+  "h": 1086,
+  "src": "/img/store-bg-noceiling.webp",
+  "raw": [
+   1448,
+   1086
+  ]
+ },
+ "stand": {
+  "w": 1506,
+  "h": 908,
+  "src": "/img/stand.webp",
+  "raw": [
+   1672,
+   941
+  ]
+ },
+ "sign": {
+  "w": 2139,
+  "h": 604,
+  "src": "/img/sign.webp",
+  "raw": [
+   2172,
+   724
+  ]
+ },
+ "lamp": {
+  "w": 246,
+  "h": 487,
+  "src": "/img/lamp.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "lantern": {
+  "w": 168,
+  "h": 468,
+  "src": "/img/lantern.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "push": {
+  "w": 480,
+  "h": 689,
+  "src": "/img/push.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "push-alt": {
+  "w": 480,
+  "h": 689,
+  "src": "/img/push-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "goodchoice": {
+  "w": 495,
+  "h": 1184,
+  "src": "/img/goodchoice.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "goodchoice-alt": {
+  "w": 495,
+  "h": 1184,
+  "src": "/img/goodchoice-alt.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "bull": {
+  "w": 468,
+  "h": 580,
+  "src": "/img/bull.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "bull-alt": {
+  "w": 468,
+  "h": 580,
+  "src": "/img/bull-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "bagel": {
+  "w": 585,
+  "h": 672,
+  "src": "/img/bagel.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "bagel-alt": {
+  "w": 585,
+  "h": 672,
+  "src": "/img/bagel-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "chicken": {
+  "w": 390,
+  "h": 595,
+  "src": "/img/chicken.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "chicken-alt": {
+  "w": 390,
+  "h": 595,
+  "src": "/img/chicken-alt.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "nest": {
+  "w": 810,
+  "h": 503,
+  "src": "/img/nest.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "peapod": {
+  "w": 240,
+  "h": 670,
+  "src": "/img/peapod.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "peapod-alt": {
+  "w": 240,
+  "h": 670,
+  "src": "/img/peapod-alt.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "vine": {
+  "w": 1095,
+  "h": 1080,
+  "src": "/img/vine.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "tomato": {
+  "w": 288,
+  "h": 277,
+  "src": "/img/tomato.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "tomato-alt": {
+  "w": 288,
+  "h": 277,
+  "src": "/img/tomato-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "banana": {
+  "w": 300,
+  "h": 569,
+  "src": "/img/banana.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "banana-alt": {
+  "w": 300,
+  "h": 569,
+  "src": "/img/banana-alt.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "grape-leaves": {
+  "w": 645,
+  "h": 663,
+  "src": "/img/grape-leaves.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "grape": {
+  "w": 174,
+  "h": 170,
+  "src": "/img/grape.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "grape-alt": {
+  "w": 174,
+  "h": 170,
+  "src": "/img/grape-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "pepper-black": {
+  "w": 336,
+  "h": 335,
+  "src": "/img/pepper-black.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "pepper-black-alt": {
+  "w": 336,
+  "h": 335,
+  "src": "/img/pepper-black-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "pepper-red": {
+  "w": 360,
+  "h": 513,
+  "src": "/img/pepper-red.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "pepper-red-alt": {
+  "w": 360,
+  "h": 513,
+  "src": "/img/pepper-red-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "pepper-hat": {
+  "w": 294,
+  "h": 338,
+  "src": "/img/pepper-hat.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "pepper-hat-alt": {
+  "w": 294,
+  "h": 338,
+  "src": "/img/pepper-hat-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "pear": {
+  "w": 252,
+  "h": 356,
+  "src": "/img/pear.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "pear-alt": {
+  "w": 252,
+  "h": 356,
+  "src": "/img/pear-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "corn": {
+  "w": 180,
+  "h": 332,
+  "src": "/img/corn.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "corn-alt": {
+  "w": 180,
+  "h": 332,
+  "src": "/img/corn-alt.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "carrot": {
+  "w": 186,
+  "h": 380,
+  "src": "/img/carrot.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "carrot-alt": {
+  "w": 186,
+  "h": 380,
+  "src": "/img/carrot-alt.webp",
+  "raw": [
+   1024,
+   1536
+  ]
+ },
+ "cabbage": {
+  "w": 240,
+  "h": 232,
+  "src": "/img/cabbage.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "cabbage-alt": {
+  "w": 240,
+  "h": 232,
+  "src": "/img/cabbage-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "lime": {
+  "w": 216,
+  "h": 217,
+  "src": "/img/lime.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "lime-alt": {
+  "w": 216,
+  "h": 217,
+  "src": "/img/lime-alt.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "greens": {
+  "w": 735,
+  "h": 416,
+  "src": "/img/greens.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "hay": {
+  "w": 1140,
+  "h": 749,
+  "src": "/img/hay.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "crate-corn": {
+  "w": 585,
+  "h": 362,
+  "src": "/img/crate-corn.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "crate-carrot": {
+  "w": 726,
+  "h": 456,
+  "src": "/img/crate-carrot.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "crate-carrot-front": {
+  "w": 726,
+  "h": 456,
+  "src": "/img/crate-carrot-front.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "crate-tomato": {
+  "w": 990,
+  "h": 707,
+  "src": "/img/crate-tomato.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "crate-tomato-front": {
+  "w": 990,
+  "h": 707,
+  "src": "/img/crate-tomato-front.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "crate-lime": {
+  "w": 954,
+  "h": 659,
+  "src": "/img/crate-lime.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "crate-lime-front": {
+  "w": 954,
+  "h": 659,
+  "src": "/img/crate-lime-front.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "skirt": {
+  "w": 2132,
+  "h": 295,
+  "src": "/img/skirt.webp",
+  "raw": [
+   2172,
+   724
+  ]
+ },
+ "fence-l": {
+  "w": 1496,
+  "h": 1003,
+  "src": "/img/fence-l.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "fence-r": {
+  "w": 1421,
+  "h": 953,
+  "src": "/img/fence-r.webp",
+  "raw": [
+   1536,
+   1024
+  ]
+ },
+ "ball": {
+  "w": 168,
+  "h": 173,
+  "src": "/img/ball.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "hand": {
+  "w": 420,
+  "h": 573,
+  "src": "/img/hand.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ },
+ "egg": {
+  "w": 78,
+  "h": 100,
+  "src": "/img/egg.webp",
+  "raw": [
+   1254,
+   1254
+  ]
+ }
+}

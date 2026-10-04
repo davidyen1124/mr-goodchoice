@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>Mr. Goodchoice · Mollie Stone's Market</title>
+    <meta name="description" content="Push the big blue button. The vegetables have been waiting since 1994. A singing, dancing farm stand from Mollie Stone's Market." />
+    <meta name="theme-color" content="#140e08" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Goodchoice" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- social preview: link cards need absolute URLs -->
+    <link rel="canonical" href="https://mr-goodchoice.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mr. Goodchoice" />
+    <meta property="og:url" content="https://mr-goodchoice.vercel.app/" />
+    <meta property="og:title" content="Mr. Goodchoice welcomes you to Mollie Stone's Market" />
+    <meta property="og:description" content="Push the big blue button. The vegetables have been waiting since 1994." />
+    <meta property="og:image" content="https://mr-goodchoice.vercel.app/og.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Mr. Goodchoice farm stand: a singing bull, hen, bagel, banana and a crowd of vegetables under the Mollie Stone's Market sign" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mr. Goodchoice welcomes you to Mollie Stone's Market" />
+    <meta name="twitter:description" content="Push the big blue button. The vegetables have been waiting since 1994." />
+    <meta name="twitter:image" content="https://mr-goodchoice.vercel.app/og.jpg" />
+    <meta name="twitter:image:alt" content="The Mr. Goodchoice farm stand with its singing produce" />
+  </head>
+  <body>
+    <main id="viewport" aria-label="The Mr. Goodchoice farm stand. Tap the characters, or press the big blue button for the show.">
+      <div id="stage"></div>
+    </main>
+    <div id="taps" aria-hidden="true"></div>
+
+    <button class="round-btn" id="btn-sound" aria-label="Mute" aria-pressed="false">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path class="spk" d="M5 12.5h4.5L16 7v18l-6.5-5.5H5a1.5 1.5 0 0 1-1.5-1.5v-4A1.5 1.5 0 0 1 5 12.5z" /><path class="wave" d="M20.5 11.5a6 6 0 0 1 0 9M24 8a11 11 0 0 1 0 16" /><path class="x" d="M20.5 12.5l7 7m0-7l-7 7" /></svg>
+    </button>
+
+    <ol class="pips" id="pips" aria-hidden="true"></ol>
+
+    <button class="push-btn" id="btn-push" aria-label="Push the button to start the show">
+      <span class="push-glow" aria-hidden="true"></span>
+      <img class="off" src="/img/push.webp" alt="" draggable="false" />
+      <img class="on" src="/img/push-alt.webp" alt="" draggable="false" />
+      <span class="push-stop" aria-hidden="true"></span>
+    </button>
+
+    <div class="caption" id="caption" aria-live="polite">
+      <span class="avatar" id="caption-avatar" aria-hidden="true"></span>
+      <span class="caption-text">
+        <span class="who" id="caption-who"></span>
+        <span class="words" id="caption-words"></span>
+      </span>
+    </div>
+
+    <img class="hand" id="hand" src="/img/hand.webp" alt="" aria-hidden="true" draggable="false" />
+
+    <section class="splash" id="intro" aria-labelledby="splash-title">
+      <div class="rays" aria-hidden="true"></div>
+      <div class="splash-inner">
+        <h1 id="splash-title" class="sr-only">Mr. Goodchoice welcomes you to Mollie Stone's Market</h1>
+        <div class="logo-wrap"><img class="logo" src="/img/sign.webp" alt="" draggable="false" /></div>
+        <div class="cast-row" aria-hidden="true">
+          <img src="/img/avatar-choir.webp" alt="" style="--i: 0; --bg: #ffd6cf" />
+          <img src="/img/avatar-bull.webp" alt="" style="--i: 1; --bg: #f3dcc0" />
+          <img src="/img/avatar-goodchoice.webp" alt="" style="--i: 2; --bg: #d9f0e0" />
+          <img src="/img/avatar-chicken.webp" alt="" style="--i: 3; --bg: #fff1d6" />
+          <img src="/img/avatar-grapes.webp" alt="" style="--i: 4; --bg: #e6dcff" />
+        </div>
+        <button class="play" id="enter" disabled aria-label="Loading">
+          <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="track" cx="60" cy="60" r="54" /><circle class="fill" id="ring-fill" cx="60" cy="60" r="54" /></svg>
+          <svg class="tri" viewBox="0 0 40 40" aria-hidden="true"><path d="M13 8.5c0-1.6 1.7-2.6 3.1-1.8l16 10.6c1.3.8 1.3 2.7 0 3.5l-16 10.6c-1.4.9-3.1-.1-3.1-1.7z" /></svg>
+        </button>
+        <p class="sound-on" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M5 12.5h4.5L16 7v18l-6.5-5.5H5a1.5 1.5 0 0 1-1.5-1.5v-4A1.5 1.5 0 0 1 5 12.5z" /><path d="M20.5 11.5a6 6 0 0 1 0 9M24 8a11 11 0 0 1 0 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" /></svg>
+          Sound on!
+        </p>
+      </div>
+    </section>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

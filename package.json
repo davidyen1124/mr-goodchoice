@@ -1,0 +1,27 @@
+{
+  "name": "mr-goodchoice",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --port 5391",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "crops": "node scripts/crops.mjs",
+    "gen": "node scripts/gen.mjs",
+    "clean-art": "node scripts/clean.mjs",
+    "song": "node scripts/song.mjs",
+    "qa": "node scripts/qa.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/fredoka": "^5.3.0",
+    "@fontsource-variable/inter-tight": "^5.3.0",
+    "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0",
+    "sharp": "^0.35.5",
+    "vite": "^8.3.2"
+  }
+}
