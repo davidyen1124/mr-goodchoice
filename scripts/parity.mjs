@@ -1,5 +1,5 @@
 // Pixel parity check: renders the scene 1:1 at the photo's framing (2000x1500, ?parity) and compares it with
-// ref/scene.jpg. Writes qa/parity-site.png, qa/parity-blend.png (50/50), qa/parity-side.png (side by side)
+// assets-src/ref/scene.jpg. Writes qa/parity-site.png, qa/parity-blend.png (50/50), qa/parity-side.png (side by side)
 // and prints a per-region score (mean colour difference, lower is closer).
 // usage: node scripts/parity.mjs [url]   (default http://localhost:5391)
 import fs from 'node:fs'
@@ -16,11 +16,11 @@ await page.waitForTimeout(800)
 await page.screenshot({ path: 'qa/parity-site.png' })
 await browser.close()
 
-const photo = await sharp('ref/scene.jpg').resize(2000, 1500).removeAlpha().raw().toBuffer()
+const photo = await sharp('assets-src/ref/scene.jpg').resize(2000, 1500).removeAlpha().raw().toBuffer()
 const site = await sharp('qa/parity-site.png').removeAlpha().raw().toBuffer()
-await sharp('qa/parity-site.png').composite([{ input: await sharp('ref/scene.jpg').resize(2000, 1500).ensureAlpha(0.5).png().toBuffer() }]).toFile('qa/parity-blend.png')
+await sharp('qa/parity-site.png').composite([{ input: await sharp('assets-src/ref/scene.jpg').resize(2000, 1500).ensureAlpha(0.5).png().toBuffer() }]).toFile('qa/parity-blend.png')
 await sharp({ create: { width: 4000, height: 1500, channels: 3, background: '#000' } })
-  .composite([{ input: 'qa/parity-site.png', left: 0, top: 0 }, { input: await sharp('ref/scene.jpg').resize(2000, 1500).toBuffer(), left: 2000, top: 0 }])
+  .composite([{ input: 'qa/parity-site.png', left: 0, top: 0 }, { input: await sharp('assets-src/ref/scene.jpg').resize(2000, 1500).toBuffer(), left: 2000, top: 0 }])
   .jpeg({ quality: 80 }).toFile('qa/parity-side.jpg')
 
 // mean absolute difference over regions (on a blurred copy, so 1-2px offsets do not dominate)

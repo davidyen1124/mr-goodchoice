@@ -1,5 +1,5 @@
-// Renders ref/scene.jpg at stage resolution (2000x1500) with a labelled 50px grid, for measuring element boxes.
-// usage: node scripts/grid.mjs [x y w h]  -> writes ref/grid.png (or a zoomed crop ref/grid-crop.png)
+// Renders assets-src/ref/scene.jpg at stage resolution (2000x1500) with a labelled 50px grid, for measuring element boxes.
+// usage: node scripts/grid.mjs [x y w h]  -> writes assets-src/ref/grid.png (or a zoomed crop assets-src/ref/grid-crop.png)
 import sharp from 'sharp'
 const W = 2000, H = 1500
 const [x, y, w, h] = process.argv.slice(2).map(Number)
@@ -10,8 +10,8 @@ let labels = ''
 for (let i = 0; i < W; i += 100) for (let j = 0; j < H; j += 100)
   labels += `<text x="${i + 3}" y="${j + 14}" font-size="13" font-family="Menlo" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">${i},${j}</text>`
 const svg = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${lines}${labels}</svg>`)
-let img = sharp('ref/scene.jpg').resize(W, H).composite([{ input: svg }])
+let img = sharp('assets-src/ref/scene.jpg').resize(W, H).composite([{ input: svg }])
 if (w) {
   const buf = await img.png().toBuffer()
-  await sharp(buf).extract({ left: x, top: y, width: w, height: h }).toFile('ref/grid-crop.png')
-} else await img.png().toFile('ref/grid.png')
+  await sharp(buf).extract({ left: x, top: y, width: w, height: h }).toFile('assets-src/ref/grid-crop.png')
+} else await img.png().toFile('assets-src/ref/grid.png')

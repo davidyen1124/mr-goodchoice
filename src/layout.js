@@ -1,4 +1,4 @@
-// Where everything stands, in stage units: the photo (ref/scene.jpg) scaled to 2000x1500.
+// Where everything stands, in stage units: the photo (assets-src/ref/scene.jpg) scaled to 2000x1500.
 // [x, y, w, h?] is the box of the sprite's visible pixels; h defaults to the sprite's own aspect ratio.
 // Positions were matched to the photo with the compare overlay (press C on the site, or ?compare).
 //
@@ -6,6 +6,8 @@
 // talk:  the singing part the actor belongs to (see song.json `who`), plus 'choir' / 'all'.
 // gag:   whose click lines it gets (gags.json `who`).
 // dance: how it moves while the show runs. pivot: transform origin.
+
+import { asset } from './asset.js'
 
 const PRODUCE = ['choir', 'all']
 
@@ -90,7 +92,7 @@ export function buildActors(sprites) {
     const alt = sprites[sprite + '-alt']
     return {
       id, sprite, x, y, w, h: height, z: 0, ...extra,
-      src: s.src, altSrc: alt?.src || null,
+      src: asset(s.src), altSrc: alt ? asset(alt.src) : null,
       phase: extra.phase ?? (id.length * 0.137) % 1,
     }
   })

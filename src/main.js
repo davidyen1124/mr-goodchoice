@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import song from './data/song.json'
 import gags from './data/gags.json'
 import sprites from './data/sprites.json'
+import { asset } from './asset.js'
 import { buildActors, membersOf } from './layout.js'
 
 const W = 2000, H = 1500
@@ -123,7 +124,7 @@ const gagAudio = new Audio()
 const sfxCache = {}
 function sfx(name, volume = 0.6) {
   if (muted) return
-  const base = (sfxCache[name] ||= new Audio(`/audio/sfx/${name}.mp3`))
+  const base = (sfxCache[name] ||= new Audio(asset(`audio/sfx/${name}.mp3`)))
   const a = base.cloneNode()
   a.volume = volume
   a.play().catch(() => {})
@@ -139,16 +140,16 @@ const buzz = (ms = 8) => navigator.vibrate?.(ms)
 
 // ——— loading ———
 async function preload() {
-  const urls = [...new Set([...actors.flatMap((a) => [a.src, a.altSrc]), sprites.egg.src, '/img/push.webp', '/img/push-alt.webp', '/img/hand.webp',
-    ...Object.keys(CAST).map((w) => `/img/avatar-${w}.webp`)].filter(Boolean))]
+  const urls = [...new Set([...actors.flatMap((a) => [a.src, a.altSrc]), asset(sprites.egg.src), asset('img/push.webp'), asset('img/push-alt.webp'), asset('img/hand.webp'),
+    ...Object.keys(CAST).map((w) => asset(`img/avatar-${w}.webp`))].filter(Boolean))]
   let done = 0
   const total = urls.length + 2
   const ring = $('#ring-fill')
   const tick = () => { done++; ring.style.strokeDashoffset = String(339.3 * (1 - done / total)) }
   const img = (u) => new Promise((r) => { const i = new Image(); i.onload = i.onerror = () => { tick(); r() }; i.src = u })
-  const songLoad = fetch('/audio/song.mp3').then((r) => r.blob()).then((b) => { songAudio.src = URL.createObjectURL(b); tick() })
+  const songLoad = fetch(asset('audio/song.mp3')).then((r) => r.blob()).then((b) => { songAudio.src = URL.createObjectURL(b); tick() })
   await Promise.all([...urls.map(img), songLoad, document.fonts.ready.then(tick)])
-  for (const n of ['pop', 'boing', 'ding', 'kaching', 'whistleDown']) sfxCache[n] = new Audio(`/audio/sfx/${n}.mp3`)
+  for (const n of ['pop', 'boing', 'ding', 'kaching', 'whistleDown']) sfxCache[n] = new Audio(asset(`audio/sfx/${n}.mp3`))
 }
 
 // ——— the show ———
@@ -252,7 +253,7 @@ function setCaption(i, t = 0) {
     const l = song.lines[i]
     const [name, color] = CAST[l.who] || ['', '#e2382c']
     cap.style.setProperty('--c', color)
-    $('#caption-avatar').style.setProperty('--img', `url(/img/avatar-${l.who}.webp)`)
+    $('#caption-avatar').style.setProperty('--img', `url(${asset(`img/avatar-${l.who}.webp`)})`)
     $('#caption-who').textContent = name
     $('#caption-words').innerHTML = l.words.map((w) => `<span class="w">${w.w}</span>`).join(' ')
     cap.classList.add('on')
@@ -402,7 +403,7 @@ function say(a, line) {
   const crowd = ['tomatoes', 'grapes', 'carrots', 'limes', 'pears', 'peppers', 'corn'].includes(line.who)
   const cast = crowd ? actors.filter((x) => x.gag === line.who) : [a]
   gagAudio.pause()
-  gagAudio.src = `/audio/gags/${line.id}.mp3`
+  gagAudio.src = asset(`audio/gags/${line.id}.mp3`)
   gagAudio.play().catch(() => {})
   bubble(a, line)
   live.textContent = `${CAST[line.who]?.[0] || ''}: ${line.text}`
@@ -479,7 +480,7 @@ function layEgg(fromShow = false) {
   const egg = document.createElement('div')
   egg.className = 'actor'
   Object.assign(egg.style, { left: c.x + c.w / 2 - 14 + 'px', top: c.y + c.h - 40 + 'px', width: '28px', height: '36px', zIndex: 7 })
-  egg.innerHTML = `<div class="rig"><img class="main" src="${sprites.egg.src}" alt=""></div>`
+  egg.innerHTML = `<div class="rig"><img class="main" src="${asset(sprites.egg.src)}" alt=""></div>`
   stage.append(egg)
   if (!fromShow) sfx('whistleDown', 0.45)
   gsap.timeline({ onComplete: () => egg.remove() })
@@ -676,7 +677,7 @@ preload().then(() => {
     lastInteraction = performance.now()
     // unlock audio on iOS inside the gesture
     songAudio.play().then(() => { songAudio.pause(); songAudio.currentTime = 0 }).catch(() => {})
-    gagAudio.src = '/audio/sfx/pop.mp3'
+    gagAudio.src = asset('audio/sfx/pop.mp3')
     gagAudio.volume = 0
     gagAudio.play().then(() => (gagAudio.volume = 1)).catch(() => (gagAudio.volume = 1))
     if (instant) { intro.remove(); return }

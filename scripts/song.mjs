@@ -12,7 +12,7 @@ import path from 'node:path'
 import { renderBand, SFX, SR } from './band.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
-const CACHE = path.join(ROOT, 'art/voice-cache')
+const CACHE = path.join(ROOT, 'assets-src/art/voice-cache')
 const AUDIO = path.join(ROOT, 'public/audio')
 const DATA = path.join(ROOT, 'src/data')
 for (const d of [CACHE, AUDIO, path.join(AUDIO, 'gags'), DATA]) fs.mkdirSync(d, { recursive: true })

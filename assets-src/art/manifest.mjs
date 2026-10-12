@@ -1,4 +1,4 @@
-// Every element of the Mr. Goodchoice farm-stand scene (ref/scene.jpg), recreated one by one with Codex CLI's
+// Every element of the Mr. Goodchoice farm-stand scene (assets-src/ref/scene.jpg), recreated one by one with Codex CLI's
 // built-in image_gen (scripts/gen.mjs) so each can be animated on its own.
 // box: where the element sits in the photo, in stage units (the photo scaled to 2000x1500).
 // The crop of the photo around `box` is attached to the Codex run as the reference image.

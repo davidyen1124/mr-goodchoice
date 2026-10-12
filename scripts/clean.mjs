@@ -1,14 +1,14 @@
-// art/raw/*.png -> public/img/*.webp, plus src/data/sprites.json (each sprite's size).
+// assets-src/art/raw/*.png -> public/img/*.webp, plus src/data/sprites.json (each sprite's size).
 // Sprites are trimmed to their visible pixels. A sprite's second frame (<name>-alt) and a crate's front panel
 // (<crate>-front) are registered onto their first frame and cut with the same box, so swapping frames never jitters.
 // usage: node scripts/clean.mjs
 import fs from 'node:fs'
 import path from 'node:path'
 import sharp from 'sharp'
-import { ELEMENTS } from '../art/manifest.mjs'
+import { ELEMENTS } from '../assets-src/art/manifest.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
-const RAW = path.join(ROOT, 'art/raw')
+const RAW = path.join(ROOT, 'assets-src/art/raw')
 const OUT = path.join(ROOT, 'public/img')
 fs.mkdirSync(OUT, { recursive: true })
 fs.mkdirSync(path.join(ROOT, 'src/data'), { recursive: true })

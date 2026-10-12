@@ -2,17 +2,17 @@
 // one `codex exec` per image, with the element's crop of the photo attached as the reference.
 // An element's `alt` frame is a second run that edits the first render, so the two frames match.
 // usage: node scripts/gen.mjs [--force] [--alt-only] [--no-alt] [-j 6] [name ...]
-// Output: art/raw/<name>.png and art/raw/<name>-alt.png
+// Output: assets-src/art/raw/<name>.png and assets-src/art/raw/<name>-alt.png
 import { spawn } from 'node:child_process'
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
-import { CUTOUT, ELEMENTS, LOOK } from '../art/manifest.mjs'
+import { CUTOUT, ELEMENTS, LOOK } from '../assets-src/art/manifest.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
-const RAW = path.join(ROOT, 'art/raw')
-const LOG = path.join(ROOT, 'art/logs')
-const CROPS = path.join(ROOT, 'art/crops')
+const RAW = path.join(ROOT, 'assets-src/art/raw')
+const LOG = path.join(ROOT, 'assets-src/art/logs')
+const CROPS = path.join(ROOT, 'assets-src/art/crops')
 const GEN = path.join(os.homedir(), '.codex/generated_images')
 fs.mkdirSync(RAW, { recursive: true })
 fs.mkdirSync(LOG, { recursive: true })

@@ -1,9 +1,9 @@
-// Cuts the reference crop for every element out of ref/scene.jpg (art/crops/<name>.png) and draws every
-// box on the photo (ref/boxes.png) so the measurements can be checked by eye.
+// Cuts the reference crop for every element out of assets-src/ref/scene.jpg (assets-src/art/crops/<name>.png) and draws every
+// box on the photo (assets-src/ref/boxes.png) so the measurements can be checked by eye.
 import sharp from 'sharp'
-import { ELEMENTS } from '../art/manifest.mjs'
+import { ELEMENTS } from '../assets-src/art/manifest.mjs'
 
-const SRC = 'ref/scene.jpg'
+const SRC = 'assets-src/ref/scene.jpg'
 const { width: PW, height: PH } = await sharp(SRC).metadata()
 const k = PW / 2000 // stage units -> photo pixels
 
@@ -15,7 +15,7 @@ for (const e of ELEMENTS.filter((e) => e.box && !e.ui)) {
   let img = sharp(SRC).extract({ left, top, width: right - left, height: bottom - top })
   // tiny elements: upscale so image_gen sees detail
   if (right - left < 400) img = img.resize({ width: 512, kernel: 'lanczos3' })
-  await img.png().toFile(`art/crops/${e.name}.png`)
+  await img.png().toFile(`assets-src/art/crops/${e.name}.png`)
 }
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1500">${ELEMENTS.filter((e) => e.box && !e.opaque && !e.ui)
@@ -24,5 +24,5 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1500">
     return `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${c}" stroke-width="3"/><text x="${x + 3}" y="${y + 15}" font-size="15" font-family="Menlo" fill="${c}" stroke="#000" stroke-width="3" paint-order="stroke">${name}</text>`
   })
   .join('')}</svg>`
-await sharp(SRC).resize(2000, 1500).composite([{ input: Buffer.from(svg) }]).png().toFile('ref/boxes.png')
+await sharp(SRC).resize(2000, 1500).composite([{ input: Buffer.from(svg) }]).png().toFile('assets-src/ref/boxes.png')
 console.log(`${ELEMENTS.length} crops`)

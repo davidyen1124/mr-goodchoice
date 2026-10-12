@@ -1,8 +1,8 @@
 node_modules
 dist
 .vercel
-art/voice-cache
-art/logs
+assets-src/art/voice-cache
+assets-src/art/logs
 .DS_Store
 .env*
 qa/
